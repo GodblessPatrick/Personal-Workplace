@@ -10,11 +10,11 @@ from pymongo import MongoClient
 
 test_devid = ['07420000000000A7']
 
-host = 'yun.fenjin.cn'
+host = 'YOUR HOST ADDR'
 host2 = '127.0.0.1'
 
 #connect to MongoDB
-client = MongoClient(host, 29916)
+client = MongoClient(host, PORTNUM)
 client2 = MongoClient(host2, 27017)
 db = client.cloud
 db2 = client2.cloud  # mydb数据库，同上解释
@@ -26,7 +26,7 @@ equipmentRunTimeDaysCollection = db2.test1
 room_avg_temp = {}
 
 def connect_mysql():
-    conn = pymysql.connect(host='180.76.247.84', user='root', passwd='pass9cuo@2018', db='cloud',charset='utf8')
+    conn = pymysql.connect(host='HOST ADDR', user='root', passwd='PWD', db='cloud',charset='utf8')
     cursor = conn.cursor()
     sql = 'SELECT SensorNo FROM Sensors'
     try:
